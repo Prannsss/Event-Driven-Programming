@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 class Main {
-    private static final int MAX = 3;
+    private static final int USER_COUNT = 3;
 
     public static void main(String[] args) {
         try (Scanner scn = new Scanner(System.in)) {
@@ -12,7 +12,7 @@ class Main {
             Map<String, String> credentials = new HashMap<>();
             Map<String, String> displayNames = new HashMap<>(); 
 
-            for (int i = 0; i < MAX; i++) {
+            for (int i = 0; i < USER_COUNT; i++) {
                 // ask for username
                 System.out.println("----User " + (i + 1) + " account---- \nUsername: ");
                 String unameInput = scn.nextLine();
