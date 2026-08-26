@@ -3,16 +3,16 @@ import java.util.Map;
 import java.util.Scanner;
 
 class Main {
-    private static final int USER_COUNT = 3;
+    private static final int MAX = 3;
 
     public static void main(String[] args) {
         try (Scanner scn = new Scanner(System.in)) {
 
-            // store the unames & pw using map loop 3 times
+            // store the unames & pw using map loop n times
             Map<String, String> credentials = new HashMap<>();
             Map<String, String> displayNames = new HashMap<>(); 
 
-            for (int i = 0; i < USER_COUNT; i++) {
+            for (int i = 0; i < MAX; i++) {
                 // ask for username
                 System.out.println("----User " + (i + 1) + " account---- \nUsername: ");
                 String unameInput = scn.nextLine();
@@ -39,9 +39,8 @@ class Main {
             String reversedLoginPass = reverseString(loginPassword);
 
             // display reveresd login credentials if needed for debugging
-            // System.out.println("stored username: " + reversedLoginUser + "); // debug print
-            // System.out.println("stored password: " + reversedLoginPass + "); // debug print
-
+            // System.out.println("stored username: " + reversedLoginUser);
+            // System.out.println("stored password: " + reversedLoginPass);
 
             // check if existing ang user then validate password niya
             boolean isSuccess = credentials.containsKey(reversedLoginUser)
