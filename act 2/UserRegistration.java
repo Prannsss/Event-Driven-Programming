@@ -3,9 +3,9 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    private static final String EMAIL_REGEX = "^[\\\\w!#$%&'*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&'*+/=?`{|}~^-]+)*" + "@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$";
+    private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
 
-    private static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
+    private static final String PASSWORD_REGEX = "^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
 
     public static boolean isValidEmail(String email) {
         return email != null && Pattern.matches(EMAIL_REGEX, email);
@@ -29,7 +29,7 @@ public class UserRegistration {
             String password = scn.nextLine();
 
             if (!isValidPassword(password)) {
-                System.out.println("Registration failed!\nPassword must be a minimum of 8 characters,\ninclude at least 1 uppercase letter, and 1 special character.");
+                System.out.println("Registration failed!\nPassword must be a minimum of 8 characters,\ninclude at least 1 uppercase letter,\none number and 1 special character.");
                 return;
             }
 
